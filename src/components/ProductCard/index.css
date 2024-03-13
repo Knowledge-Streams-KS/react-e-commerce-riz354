@@ -1,0 +1,20 @@
+/* index.css */
+.Card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block; 
+    max-height: 800px;
+    min-height: 800px;
+    margin-top: 0;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
