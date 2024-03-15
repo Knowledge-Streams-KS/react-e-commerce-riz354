@@ -4,9 +4,11 @@ import { useParams } from "react-router-dom"
 const Contact =()=>{
    
     const {contactid} = useParams()
-    useEffect(()=>{
-        // console.log({param})
-    },[])
+    // const params =useParams()
+    // useParams.contactId
+    // useEffect(()=>{
+    //     // console.log({param})
+    // },[])
     return(
         <>
             <h1>Contact us :{contactid} </h1>
