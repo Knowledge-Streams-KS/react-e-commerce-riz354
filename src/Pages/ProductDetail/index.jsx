@@ -3,17 +3,18 @@ import { useEffect, useState } from "react";
 import { useParams, useRouteLoaderData } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 const ProductDetail = () => {
-    // const product = useLoaderData();
-    const [product, setProduct] = useState([])
-    const { productId } = useParams();
-    const fetchData = async () => {
-        const resp = await axios.get(`https://fakestoreapi.com/products/${productId}`)
-        setProduct(resp.data)
-        console.log(resp)
-    }
-    useEffect(() => {
-        fetchData()
-    }, [])
+    const mydata = useLoaderData();
+    const product = mydata.data;
+    // const [product, setProduct] = useState([])
+    // const { productId } = useParams();
+    // const fetchData = async () => {
+    //     const resp = await axios.get(`https://fakestoreapi.com/products/${productId}`)
+    //     setProduct(resp.data)
+    //     console.log(resp)
+    // }
+    // useEffect(() => {
+    //     fetchData()
+    // }, [])
 
     return (
         <>
@@ -35,8 +36,7 @@ const ProductDetail = () => {
 
 export default ProductDetail;
 
-// export const productDetailLoader = async () => {
-//     const resp = await axios.get(`https://fakestoreapi.com/products/${productId}`)
-//     return resp.data
-// }
+export const productDetailLoader = ({ params }) => {
+    return axios.get(`https://fakestoreapi.com/products/${params.productId}`)
+}
 
